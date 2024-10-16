@@ -34,11 +34,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build
-        env:
-          BASE_URL: "/travel-viewer/"
         run: |
           docker build -t takatoy .
-          docker run -v ./dist:/app/dist takatoy
+          docker run -v ./dist:/app/dist takatoy bun run build --base "/travel-viewer/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
