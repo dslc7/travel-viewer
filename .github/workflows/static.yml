@@ -34,6 +34,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build
+        env:
+          BASE_URL: "/travel-viewer/"
         run: |
           docker build -t takatoy .
           docker run -v ./dist:/app/dist takatoy
