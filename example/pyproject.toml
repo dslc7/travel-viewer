@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "example"
+version = "0.1.0"
+description = ""
+authors = ["Takato Yamazaki <takato.yamazaki@sbintuitions.co.jp>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+websockets = "^13.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
