@@ -19,7 +19,7 @@
           'h-[125%] w-[125%] scale-[80%] origin-top-left': props.size == 'm',
           'h-full w-full': props.size == 'l',
         }"
-        :src="`http://maps.google.co.jp/maps?&output=embed&q=loc:${props.lat},${props.lon}&z=${props.zoom}`"
+        :src="`https://maps.google.co.jp/maps?&output=embed&q=loc:${props.lat},${props.lon}&z=${props.zoom}`"
         loading="lazy"
       ></iframe>
     </div>
