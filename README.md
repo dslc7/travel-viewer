@@ -19,4 +19,8 @@ WebSocket サーバーを立て、最初の画面でサーバーの URL を入�
 ]
 ```
 
+送信した`q`と`z`は以下のURLに変換されて利用されます。
+```
+https://maps.google.com/maps?output=embed&q=${q}&z=${z}&hl=ja
+```
 Google Map クエリ制御の参考サイト: [http://www.shurey.com/html/googlemaps.html](http://www.shurey.com/html/googlemaps.html)
