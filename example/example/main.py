@@ -13,8 +13,7 @@ async def send_imgs(websocket: ServerConnection):
                         "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/%E6%9D%B1%E4%BA%AC%E3%82%BF%E3%83%AF%E3%83%BC_%28214699253%29.jpeg/640px-%E6%9D%B1%E4%BA%AC%E3%82%BF%E3%83%AF%E3%83%BC_%28214699253%29.jpeg",
                         "name": "東京タワー",
                         "yomigana": "とうきょうたわー",
-                        "lon": 139.74556,
-                        "lat": 35.65861,
+                        "q": "loc:35.65861,139.74556",
                     }
                 ]
             )
@@ -39,21 +38,6 @@ async def send_imgs(websocket: ServerConnection):
                         "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/%E9%9B%B7%E9%96%80%E3%80%82_-_panoramio.jpg/640px-%E9%9B%B7%E9%96%80%E3%80%82_-_panoramio.jpg",
                         "name": "雷門",
                         "yomigana": "かみなりもん",
-                    },
-                ]
-            )
-        )
-
-        await asyncio.sleep(5)
-
-        await websocket.send(
-            json.dumps(
-                [
-                    {
-                        "lon": 139.74556,
-                        "lat": 35.65861,
-                        "name": "東京タワー",
-                        "yomigana": "とうきょうたわー",
                     },
                 ]
             )

@@ -45,10 +45,9 @@
           'h-[49%] w-[48%]': views.length == 3 || views.length == 4,
         }"
         v-for="view of views"
-        :key="`${view.imgUrl}${view.lon}${view.lat}`"
-        :lat="view.lat"
-        :lon="view.lon"
-        :zoom="view.zoom"
+        :key="`${view.imgUrl}${view.q}`"
+        :q="view.q"
+        :z="view.z"
         :yomigana="view.yomigana"
         :name="view.name"
         :imgUrl="view.imgUrl"
@@ -67,7 +66,7 @@ const views = ref<View[]>([]);
 
 const forceShowImgNa = computed(() => {
   for (let view of views.value) {
-    if (view.imgUrl && view.lon && view.lat) return true;
+    if (view.imgUrl && view.q) return true;
   }
   return false;
 });
@@ -102,7 +101,7 @@ const connectWebSocket = () => {
     const data: View[] = JSON.parse(ev.data);
     views.value = data
       .filter((d) => {
-        return d.imgUrl || (d.lat && d.lon) || d.name;
+        return d.imgUrl || d.q || d.name;
       })
       .slice(0, 5);
     console.log(views.value);
