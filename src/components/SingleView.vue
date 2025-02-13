@@ -8,9 +8,11 @@
           class="h-full w-full object-contain flex-1 min-h-0"
           :src="props.imgUrl"
         />
-        <div class="ml-auto text-gray-300 text-xs px-4 py-1">
+        <div class="text-right text-gray-200 font-bold text-base px-4 py-1">
           情報提供: JTBパブリッシング
-          <span v-if="credit">/ 写真提供: {{ credit }}</span>
+          <span class="whitespace-nowrap" v-if="credit"
+            >/ 写真提供: {{ credit }}</span
+          >
         </div>
       </div>
       <div
