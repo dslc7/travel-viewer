@@ -4,4 +4,5 @@ interface View {
   imgUrl?: string;
   q?: string;
   z?: string;
+  credit?: string;
 }
