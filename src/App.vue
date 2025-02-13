@@ -37,23 +37,27 @@
       class="flex flex-wrap gap-4 h-full w-full items-center justify-center"
       v-else
     >
-      <SingleView
+      <div
+        v-for="view of views"
+        :key="`${view.imgUrl}${view.q}`"
         :class="{
           'h-full w-full': views.length == 1,
           'h-[49%] w-full': views.length == 2 && forceShowImgNa,
           'h-2/3 w-[48%]': views.length == 2 && !forceShowImgNa,
           'h-[49%] w-[48%]': views.length == 3 || views.length == 4,
         }"
-        v-for="view of views"
-        :key="`${view.imgUrl}${view.q}`"
-        :q="view.q"
-        :z="view.z"
-        :yomigana="view.yomigana"
-        :name="view.name"
-        :imgUrl="view.imgUrl"
-        :size="size"
-        :forceShowImgNa="forceShowImgNa"
-      />
+      >
+        <SingleView
+          :q="view.q"
+          :z="view.z"
+          :yomigana="view.yomigana"
+          :name="view.name"
+          :imgUrl="view.imgUrl"
+          :credit="view.credit"
+          :size="size"
+          :forceShowImgNa="forceShowImgNa"
+        />
+      </div>
     </div>
   </div>
 </template>
